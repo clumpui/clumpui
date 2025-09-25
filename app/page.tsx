@@ -17,6 +17,7 @@ import PackageManagerTabs from "@/components/ui/tabs-02"
 import { CodeBlock, CodeBlockCode, CodeBlockGroup } from "@/components/ui/code-block"
 import AllComponents from "@/components/ui/all-components"
 import { ThemeProvider } from "@/components/ui/theme-provider"
+import ThemeToggleButton from "@/components/ui/theme-toggle-button"
 
 const stats = [
   { label: "Components", value: "200+" },
@@ -101,6 +102,7 @@ export default function Home() {
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"
+      forcedTheme="dark"
     >
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
