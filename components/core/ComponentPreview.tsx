@@ -16,6 +16,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '../ui/dr
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
 import { InfoCard } from './CoreCard';
 import IssueButton, { FeatureRequestButton } from '../ui/issue-button';
+import Typescript from '../icons/typescript';
 
 const componentMap: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
     "complex-component": () => import(`@/registry/new-york/complex-component/complex-component`),
@@ -177,7 +178,7 @@ const ComponentPreview = ({ component }: { component: any }) => {
                     </Card>
                 </TabsContent>
                 <TabsContent value='preview' className='md:m-0 md:mt-2'>
-                    <Card className="bg-secondary-foreground/5">
+                    <Card className="bg-background">
                         <div className=" relative flex w-full items-center justify-center p-10 min-h-[83.5dvh] md:min-h-[81.5dvh] max-h-[83.5dvh] md:max-h-[81.5dvh] overflow-y-auto">
                             <Suspense fallback={
                                 <>
@@ -282,15 +283,16 @@ function renderTree(
     }
 
     return (
-        <File
+        <Typescript
             key={element.id}
             value={element.id}
             isSelectable
+            size={16}
             isSelect={isSelected}
             onClick={() => onSelectFile(element.id, element.path)}
         >
             <p className="truncate">{element.name}</p>
-        </File>
+        </Typescript>
     );
 }
 

@@ -22,6 +22,7 @@ import AITextLoading from '@/registry/new-york/ai-text-loading/ai-text-loading';
 import AI_Prompt from '@/registry/new-york/ai-prompt/ai-prompt';
 import SwooshText from '@/registry/new-york/swoosh-text/swoosh-text';
 import MarqueeDemo from '@/registry/new-york/marquee-demo/marquee-demo';
+import { Card } from './card';
 const homeComponents = [
     {
         id: 111,
@@ -51,8 +52,8 @@ const homeComponents = [
         link: '/components/clip-path',
 
         componentSrc: <div className='p-0.5'>
-            <AI_Voice/>
-            <AITextLoading className='text-white/90'/>
+            <AI_Voice />
+            <AITextLoading className='text-white/90' />
         </div>,
         className:
             '2xl:col-span-4 md:col-span-4 sm:col-span-5 col-span-14 lg:col-start-1 lg:col-end-5 lg:row-start-5 2xl:row-end-9 lg:row-end-7 row-span-4',
@@ -158,9 +159,7 @@ function AllComponents() {
                     {homeComponents?.slice(0, 13).map((component, index) => {
                         return (
                             <div className={`${component.className}`} key={index}>
-                                <div
-                                    className={`relative group  h-full w-full rounded-xl bg-white shadow-[0px_0px_0px_1px_rgba(9,9,11,0.07),0px_2px_2px_0px_rgba(9,9,11,0.05)] dark:bg-zinc-900 dark:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.1)] dark:before:pointer-events-none dark:before:absolute dark:before:-inset-px dark:before:rounded-xl dark:before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] forced-colors:outline`}
-                                >
+                                <Card className='size-full relative group bg-background'>
                                     <Link
                                         href={component.link}
                                         className='absolute top-1 transition-all group-hover:opacity-100 opacity-0 text-[0.85rem] px-2 py-0.5 dark:bg-gray-800  bg-gray-200 right-2 z-10 rounded-md grid place-content-center cursor-pointer'
@@ -170,7 +169,7 @@ function AllComponents() {
                                     <div className='grid size-full place-items-center'>
                                         {component?.componentSrc && component.componentSrc}
                                     </div>
-                                </div>
+                                </Card>
                             </div>
                         );
                     })}
